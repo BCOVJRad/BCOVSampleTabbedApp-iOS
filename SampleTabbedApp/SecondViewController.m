@@ -43,8 +43,8 @@ static NSString * const kViewControllerSlotId= @"300x250";
     
     if (_adManager == nil) {
         _adManager = newAdManager();
-        [_adManager setNetworkId:392024];   //90750];
-        [_adManager setServerUrl:@"http://5fb58.v.fwmrm.net/"]; //@"http://demo.v.fwmrm.net"];
+        [_adManager setNetworkId:90750];
+        [_adManager setServerUrl:@"http://demo.v.fwmrm.net"];
     }
     
     return _adManager;
@@ -159,11 +159,11 @@ static NSString * const kViewControllerSlotId= @"300x250";
         id<FWContext> adContext = [strongSelf.adManager newContext];
         
         // These are player/app specific values.
-        [adContext setPlayerProfile:@"392024:watchable_ios_test"/*@"90750:3pqa_ios"*/ defaultTemporalSlotProfile:nil defaultVideoPlayerSlotProfile:nil defaultSiteSectionSlotProfile:nil];
-        //[adContext setSiteSectionId:@"brightcove_ios" idType:FW_ID_TYPE_CUSTOM pageViewRandom:0 networkId:0 fallbackId:0];
+        [adContext setPlayerProfile:@"90750:3pqa_ios" defaultTemporalSlotProfile:nil defaultVideoPlayerSlotProfile:nil defaultSiteSectionSlotProfile:nil];
+        [adContext setSiteSectionId:@"brightcove_ios" idType:FW_ID_TYPE_CUSTOM pageViewRandom:0 networkId:0 fallbackId:0];
         
         // This is an asset specific value.
-        //[adContext setVideoAssetId:@"brightcove_demo_video" idType:FW_ID_TYPE_CUSTOM duration:videoDuration durationType:FW_VIDEO_ASSET_DURATION_TYPE_EXACT location:nil autoPlayType:true videoPlayRandom:0 networkId:0 fallbackId:0];
+        [adContext setVideoAssetId:@"brightcove_demo_video" idType:FW_ID_TYPE_CUSTOM duration:videoDuration durationType:FW_VIDEO_ASSET_DURATION_TYPE_EXACT location:nil autoPlayType:true videoPlayRandom:0 networkId:0 fallbackId:0];
         
         // This is the view where the ads will be rendered.
         [adContext setVideoDisplayBase:strongSelf.playerView];
